@@ -3,38 +3,34 @@
     padding: 0;
     font-family: sans-serif;
 }
-#logoimg
-{
+
+#login_boy {
     top: 130px;
     left: 450px;
     width: 200px;
     height: auto;
     position: absolute;
-    /* z-index: 1; */
-    /* background-color: white; */
-    /* border-radius: 30px; */
 }
-#signup-image
-{
+
+#signup_boy {
+    display: none;
     top: 108px;
     left: 452px;
     width: 194px;
     height: auto;
     position: absolute;
 }
-.fullbackground
-{
+
+.fullbackground {
     height: 100%;
     width: 100%;
-    background-image: url(./login-reg-img/patrick-tomasso-5hvn-2WW6rY-unsplash.jpg);
-    /* background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0.0.0.4)),url(./login-reg-img/login-reg-img/banner.jpg); */
-    /* background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%); */
+    background-image: url(/Media\ Files/background.jpg);
     background-position: center;
     background-size: cover;
     position: absolute;
 }
-.formbox
-{
+
+.formbox {
     width: 680px;
     height: 480px;
     position: relative;
@@ -44,27 +40,8 @@
     overflow: hidden;
     border-radius: 30px;
 }
-.button-box
-{
-    width: 220px;
-    margin: 35px;
-    position: relative;
-    box-shadow: 0 0 20px 9px #ff61241f;
-    border-radius: 30px;
-    left: 190px;
-}
-.toogle-button
-{
-    left: 10;
-    padding: 10px 30px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    outline: none;
-    position: relative;
-}
-#btn
-{
+
+#navbar {
     top: 0;
     left: 0;
     position: absolute;
@@ -74,21 +51,44 @@
     border-radius: 30px;
     transition: 0.5s;
 }
-.social-icons
-{
+
+.button-box {
+    width: 220px;
+    margin: 35px;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+    left: 190px;
+}
+
+.toogle-button {
+    left: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+.social-icons {
     margin: 30px auto;
     text-align: center;
 }
-.social-icons img
-{
+
+.social-icons a{
+    text-decoration: none;
+}
+
+.social-icons img {
     width: 30px;
     margin: 0 12px;
     box-shadow: 0 0 20px 0 #7f7f7f3d;
     cursor: pointer;
     border-radius: 50%;
 }
-.input-field
-{
+
+.login_input_field {
     width: 100%;
     padding: 10px 0;
     margin: 5px 0px;
@@ -99,8 +99,8 @@
     outline: none;
     background: transparent;
 }
-.submit-btn
-{
+
+.login_submit_btn {
     width: 85%;
     padding: 10px 30px;
     cursor: pointer;
@@ -111,12 +111,12 @@
     outline: none;
     border-radius: 30px;
 }
-.check-box1
-{
+
+.login_checkbox {
     margin: 50px 10px 30px 70px;
 }
-#p46
-{
+
+#remember_password {
     color: #777;
     font-size: 12px;
     bottom: 65px;
@@ -125,8 +125,7 @@
     right: -39px;
 }
 
-#p45
-{
+#term_condition {
     color: #777;
     font-size: 12px;
     bottom: 65px;
@@ -135,69 +134,50 @@
     right: -39px;
 }
 
-#login
-{
+#login_form {
     top: 210px;
     left: 90px;
 }
-.input-group
-{
-    /* top: 180px; */
-    /* left: 90px; */
+
+.login_input_group {
     position: absolute;
     width: 280px;
     transition: 0.5s;
 }
 
-.input-group1
-{
-    top: 174px; 
+.registration_input_group {
+    top: 174px;
     left: 50px;
     position: absolute;
     width: 280px;
     transition: 0.5s;
-    } 
+}
 
-    .input-field1
-    {
-        width: 100%;
-        padding: 10px 0px;
-        margin: 5px 100px;
-        border-left: 0;
-        border-top: 0;
-        border-right: 0;
-        border-bottom: 1px solid #999;
+.registration_input_field {
+    width: 100%;
+    padding: 10px 0px;
+    margin: 5px 100px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
 }
-/* #register
-{
-    top: 150px;
-    left: 600px;
-} */
-    .submit-btn1
-    {
-        width: 85%;
-        padding: 10px 30px;
-        cursor: pointer;
-        display: block;
-        margin: auto;
-        background: linear-gradient(to right, #ff105f, #ffad06);
-        border: 0;
-        outline: none;
-        border-radius: 30px;
-        margin: -9px 0px 9px 98px;
-    }
-    .check-box
-    {
-        margin: 17px 76px 29px 116px;
-    }
-    /* Image hide/ show code goes here */
-    .hide
-    {
-        display: none;
-    }
-    .hide1
-    {
-        display: none;
-    }
+
+.registration_submit_btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    margin: -9px 0px 9px 98px;
+}
+
+.registration_checkbox {
+    margin: 17px 76px 29px 116px;
+}
