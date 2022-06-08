@@ -8,53 +8,86 @@
   <title>Register Yourself</title>
   <link rel="stylesheet" href="./style.css" />
   <script src="./script.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
   <div class="fullbackground">
-    <div class="formbox ">
-      <div>
-        <img id="login_boy" src="./Media Files/login_boy.png" alt="Logo" />
+    <div id="form_start">
+      <div class="formbox">
+
+        <!-- BOY'S IMAGE  -->
+        <div>
+          <img id="login_boy" src="./Media Files/login_boy.png" alt="Logo" />
+        </div>
+        <div>
+          <img id="signup_boy" src="./Media Files/signup_boy.png" alt="signup" />
+        </div>
+
+        <!-- NAVIGATION BAR  -->
+        <div class="button-box">
+          <div id="navbar"></div>
+          <button type="button" class="toogle-button" onclick="login()">
+            Login
+          </button>
+          <button type="button" class="toogle-button" onclick="register()">
+            Register
+          </button>
+        </div>
+
+        <!-- SOCIAL ICONS  -->
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="./Media Files/login_facebook.png" alt="login with facebook" />
+          </a>
+          <a href="https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.co.in%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+            target="_blank">
+            <img src="./Media Files/login_google.png" alt="Login with Google" />
+          </a>
+          <a href="https://twitter.com/login" target="_blank">
+            <img src="./Media Files/login_twitter.png" alt="login with twitter" />
+          </a>
+        </div>
+
+        <!-- LOGIN FORM  -->
+        <form id="login_form" class="login_input_group" style="left: 90px" onsubmit="return false">
+          <input type="text" id="login_Email" class="login_input_field" placeholder="Email ID" name="User ID"
+            required />
+          <input type="password" id="login_Password" class="login_input_field" placeholder="Password" name="Password"
+            required />
+          <div class="login_check">
+            <input type="checkbox" id="login_show_password_check" onclick="showPassword()">
+            <span onclick="login_show_password_tick()" class="unselectable remember_password">Show Password</span>
+          </div>
+          <div class="login_check">
+            <input type="checkbox" id="login_tick" onclick="enable_disable_login_btn()" required/>
+            <span onclick="login_checkbox_tick()" class="unselectable remember_password">Accept Terms & Conditions</span>
+          </div>
+          <button type="submit" class="login_submit_btn" id="login_submit" onclick="login_toast()" disabled>Log in</button>
+        </form>
+        <div id="snackbar_login">Login Successful :)</div>
+
+
+        <!-- REGISTRATION FORM  -->
+        <form id="registration_form" class="registration_input_group" style="left: 650px" action="#">
+          <input type="text" class="registration_input_field" placeholder="Name " name="Name" required />
+          <input type="email" class="registration_input_field" placeholder="Email Id " name="Email" required />
+          <input type="text" class="registration_input_field" placeholder="Stream " name="Stream" required />
+          <input type="text" class="registration_input_field" placeholder="Password" name="Password" required />
+          <div class="regis_check">
+            <input type="checkbox" class="registration_checkbox" id="register_tick" required />
+            <span id="term_condition" class="unselectable" onclick="register_checkbox_tick()">I agree to the <span
+                style="color:blue">terms & Conditions</span></span>
+          </div>
+          <button type="submit" class="registration_submit_btn " id="registration_submit"
+            onclick="registration_toast()">Register</button>
+        </form>
+        <div id="snackbar_registration">Registration Successful :)</div>
+
       </div>
-      <div>
-        <img id="signup_boy" src="./Media Files/signup_boy.png" alt="signup" />
-      </div>
-      <div class="button-box">
-        <div id="navbar"></div>
-        <button type="button" class="toogle-button" onclick="login()">
-          Login
-        </button>
-        <button type="button" class="toogle-button" onclick="register()">
-          Register
-        </button>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/" target="_blank">
-          <img src="./Media Files/login_facebook.png" alt="login with facebook" />
-        </a>
-        <a href="https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.co.in%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
-          target="_blank">
-          <img src="./Media Files/login_google.png" alt="Login with Google" />
-        </a>
-        <a href="https://twitter.com/login" target="_blank">
-          <img src="./Media Files/login_twitter.png" alt="login with twitter" />
-        </a>
-      </div>
-      <form id="login_form" class="login_input_group" style="left: 90px" action="#" method="POST">
-        <input type="text" class="login_input_field" placeholder="User Id" name="User ID" required />
-        <input type="text" class="login_input_field" placeholder="Password" name="Password" required />
-        <input type="checkbox" class="login_checkbox" /><span id="remember_password">Remember Password</span>
-        <button type="submit" class="login_submit_btn">Log in</button>
-      </form>
-      <form id="registration_form" class="registration_input_group" style="left: 650px" action="#" method="POST">
-        <input type="text" class="registration_input_field" placeholder="Name " name="Name" required />
-        <input type="email" class="registration_input_field" placeholder="Email Id " name="Email" required />
-        <input type="text" class="registration_input_field" placeholder="Stream " name="Stream" required />
-        <input type="text" class="registration_input_field" placeholder="Password" name="Password" required />
-        <input type="checkbox" class="registration_checkbox" /><span id="term_condition">I agree to the terms & Conditions</span>
-        <button type="submit" class="registration_submit_btn">Register</button>
-      </form>
     </div>
+
   </div>
 
 </body>
