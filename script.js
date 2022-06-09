@@ -1,71 +1,86 @@
+//DEFINE ALL VERIABLES
+function allVariables () {
+  const login_form = document.getElementById("login_form");
+  const registration_form = document.getElementById("registration_form");
+  const navbar = document.getElementById("navbar");
+  const login_boy = document.getElementById("login_boy");
+  const signup_boy = document.getElementById("signup_boy");
+  const login_tick = document.getElementById("login_tick");
+  const login_Email = document.getElementById("login_Email");
+  const login_Password = document.getElementById("login_Password");
+  const login_submit = document.getElementById("login_submit");
+  const login_show_password_check = document.getElementById("login_show_password_check");
+  const snackbar_login = document.getElementById("snackbar_login");
+  const register_tick = document.getElementById("register_tick");
+  const registration_submit = document.getElementById("registration_submit");
+  const registration_name = document.getElementById("registration_name");
+  const registration_email = document.getElementById("registration_email");
+  const registration_stream = document.getElementById("registration_stream");
+  const registration_password = document.getElementById("registration_password");
+  const snackbar_registration = document.getElementById("snackbar_registration");
+}
+allVariables();
+
 // SHOW LOGIN CONTAINER
 function login() {
-  document.getElementById("login_form").style.left = "90px";
-  document.getElementById("registration_form").style.left = "650px";
-  document.getElementById("navbar").style.left = "0px";
-  document.getElementById("login_boy").style.display = "block";
-  document.getElementById("signup_boy").style.display = "none";
+  login_form.style.left = "90px";
+  registration_form.style.left = "650px";
+  navbar.style.left = "0px";
+  login_boy.style.display = "block";
+  signup_boy.style.display = "none";
 }
 
 // SHOW REGISTRATION CONTAINER
 function register() {
-  document.getElementById("login_form").style.left = "-300px";
-  document.getElementById("registration_form").style.left = "10px";
-  document.getElementById("navbar").style.left = "110px";
-  document.getElementById("login_boy").style.display = "none";
-  document.getElementById("signup_boy").style.display = "block";
+  login_form.style.left = "-300px";
+  registration_form.style.left = "10px";
+  navbar.style.left = "110px";
+  login_boy.style.display = "none";
+  signup_boy.style.display = "block";
 }
 
 // FUNCTION FOR SHOW PASSWORD IN TEXT FORMAT
 function showPassword() {
-  let x = document.getElementById("login_Password");
-  if (x.type === "password") {
-    x.type = "text";
+  if (login_Password.type === "password") {
+    login_Password.type = "text";
   } else {
-    x.type = "password";
+    login_Password.type = "password";
   }
 }
 
 // FUNCTION TO ENABLE/DISABLE LOGIN BUTTON ACCORDING TO ACCEPT TERMS & CONDITIONS
 function enable_disable_login_btn() {
-  // login_checkbox_tick();
-  let ltick = document.getElementById("login_tick");
   if (login_checkbox_tick() == 1) {
-    if (ltick.checked == true) {
-      ltick.checked = false;
+    if (login_tick.checked == true) {
+      login_tick.checked = false;
     } else {
-      ltick.checked = true;
+      login_tick.checked = true;
     }
   } else {
-    document.getElementById("login_tick").checked = false;
+    login_tick.checked = false;
   }
 }
 
 // FUNCTION TO CHECK LOGIN BOX WHEN CLICK ON THEIR TEXT
 function login_checkbox_tick() {
-  let login_Email = document.getElementById("login_Email").value;
-  let login_Password = document.getElementById("login_Password").value;
-  let loginCheck = document.getElementById("login_tick");
-  let loginTerms = document.getElementById("login_submit");
-
-  if (login_Email == "" || login_Password == "") {
+  if (login_Email.value == "" || login_Password.value == "") {
     alert("Make sure you have fill email & password");
-    loginCheck.checked = false;
-    loginTerms.checked = false;
+    login_tick.checked = false;
+    login_submit.disabled = true;
     return 0;
   } else {
     //LOGIN TERMS & CONDITION
-    if (loginTerms.disabled == true) {
-      loginTerms.disabled = false;
+    if (login_submit.disabled == true) {
+      login_submit.disabled = false;
     } else {
-      loginTerms.disabled = true;
+      login_submit.disabled = true;
     }
 
     //CHECK CHANGE STATE OF CHECKBOX
-    if (loginCheck.checked == true) {
-      loginCheck.checked = false;
+    if (login_tick.checked == true) {
+      login_tick.checked = false;
     } else {
-      loginCheck.checked = true;
+      login_tick.checked = true;
     }
     return 1;
   }
@@ -74,9 +89,6 @@ function login_checkbox_tick() {
 // FUNCTION TO SHOW PASSWORD IN READABLE FORMAT
 function login_show_password_tick() {
   showPassword();
-  let login_show_password_check = document.getElementById(
-    "login_show_password_check"
-  );
   if (login_show_password_check.checked == true) {
     login_show_password_check.checked = false;
   } else if (login_show_password_check.checked == false) {
@@ -86,43 +98,76 @@ function login_show_password_tick() {
 
 // FUNCTIO FOR SHOW TOAST ON LOGIN SUCCESSFULL
 function login_toast() {
-  let login_Email = document.getElementById("login_Email").value;
-  let login_Password = document.getElementById("login_Password").value;
-
   // LOGIN SUCCESSFULL POPUP BOX CENTER OF PAGE
   const Credentials = [
-    `Email :- ${login_Email} \n Password :- ${login_Password}`,
+    `Email :- ${login_Email.value} \n Password :- ${login_Password.value}`,
   ];
   swal("Your Credentials!", `${Credentials}`, "success").then((value) => {
     window.location.reload();
   });
 
   // BOTTOM SUCCESSFUL MESSAGE
-  let x = document.getElementById("snackbar_login");
-  x.className = "show";
+  snackbar_login.className = "show";
   setTimeout(function () {
-    x.className = x.className.replace("show", "");
+    snackbar_login.className = snackbar_login.className.replace("show", "");
   }, 3000);
 }
 
-// FUNCTION TO CHECK REGISATRATION CHECK BOX WHEN CLICK ON THEIR TEXT
-function register_checkbox_tick() {
-  let loginCheck1 = document.getElementById("register_tick");
-  if (loginCheck1.checked == true) {
-    loginCheck1.checked = false;
-  } else if (loginCheck1.checked == false) {
-    loginCheck1.checked = true;
+//FUNCTION TO TICK/UNTICK RETISTRATION TERMS & CONDITION CHECKBOX ACCORDING TO CERTAIN CONDITION
+function enable_disable_registration_btn() {
+  if (registration_checkbox() == 1) {
+    if (register_tick.checked == true) {
+      register_tick.checked = false;
+    } else {
+      register_tick.checked = true;
+    }
+    if (registration_submit.disabled == true) {
+      registration_submit.disabled = false;
+    } else {
+      registration_submit.disabled = true;
+    }
+  } else {
+    register_tick.checked = false;
+    registration_submit.disabled = true;
   }
 }
 
-// function toast for registration successful
+//FUNCTION TO CHECK TERMS & CONDITION AND ENABLE/DISABLE REGISTRATION BUTTON
+function registration_checkbox() {
+  if (
+    registration_name.value == "" ||
+    registration_email.value == "" ||
+    registration_stream.value == "" ||
+    registration_password.value == ""
+  ) {
+    register_tick.checked = false;
+    registration_submit.disabled = true;
+    alert("Make sure you have filled all details.");
+    return 0;
+  } else {
+    if (register_tick.checked == false) {
+      register_tick.checked = true;
+      registration_submit.disabled = false;
+    } else {
+      register_tick.checked = false;
+      registration_submit.disabled = true;
+    }
+    return 1;
+  }
+}
+
+// FUNCTION TOAST FOR REGISTRATION SUCCESSFUL
 function registration_toast() {
-  // Get the snackbar_registration DIV
-  let x = document.getElementById("snackbar_registration");
-  // Add the "show" class to DIV
-  x.className = "show";
-  // After 3 seconds, remove the show class from DIV
+  snackbar_registration.className = "show";
   setTimeout(function () {
-    x.className = x.className.replace("show", "");
+    snackbar_registration.className = snackbar_registration.className.replace("show", "");
   }, 3000);
+
+  // REGISTRATION SUCCESSFULL POPUP BOX CENTER OF PAGE
+  const Credentials = [
+    `Username :- ${registration_name.value} \n Email :- ${registration_email.value}`,
+  ];
+  swal("Your Credentials!", `${Credentials}`, "success").then((value) => {
+    window.location.reload();
+  });
 }
