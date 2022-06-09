@@ -41,7 +41,6 @@
     width: 680px;
     height: 480px;
     position: relative;
-    /* margin: 6% auto; */
     background: #fff;
     padding: 5px;
     overflow: hidden;
@@ -217,9 +216,6 @@
 /* Show the snackbar_login when clicking on a button (class added with JavaScript) */
 #snackbar_login.show {
     visibility: visible;
-    /* Show the snackbar_login */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar_login.
-    However, delay the fade out process for 2.5 seconds */
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
