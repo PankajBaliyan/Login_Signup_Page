@@ -96,7 +96,7 @@ function login_show_password_tick() {
   }
 }
 
-// FUNCTIO FOR SHOW TOAST ON LOGIN SUCCESSFULL
+// FUNCTION FOR SHOW TOAST ON LOGIN SUCCESSFULL
 function login_toast() {
   // LOGIN SUCCESSFULL POPUP BOX CENTER OF PAGE
   const Credentials = [
