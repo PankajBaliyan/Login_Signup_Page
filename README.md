@@ -1,7 +1,7 @@
 # Login_Signup_Page
 
 This ☝️ repository is related to a ❤️ attractive login/signup page.<br>
-You can see the live preview 🖼️ of that page by clicking on above link. 🔗
+You can see the live preview 🖼️ of that page by clicking on below link. 🔗
 
 ## Features
 
