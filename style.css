@@ -24,7 +24,7 @@
 .fullbackground {
     height: 100%;
     width: 100%;
-    background-image: url(./Media\ Files/background.jpg);
+    background-image: url(./Media\ Files/background.webp);
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -123,7 +123,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 23px 1px 25px 51px;
+    margin: 15px 0px 25px 0px;
 }
 
 .remember_password {
@@ -340,4 +340,23 @@
         bottom: 0;
         opacity: 0;
     }
+}
+
+.left_90 {
+    left: 90px
+}
+
+.left_650 {
+    left: 650px
+}
+
+.color_blue {
+    color:blue
+}
+
+.login_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
