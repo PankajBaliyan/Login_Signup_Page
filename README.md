@@ -49,7 +49,7 @@ I learned many things while making this repository, i.e. how to make a login sig
 Clone the project
 
 ```bash
-  git clone https://github.com/Pankajkumar90/Chupa-chups-drink.git
+  git clone https://github.com/Pankajkumar90/Login_Signup_Page.git
 ```
 
 Go to the project directory
