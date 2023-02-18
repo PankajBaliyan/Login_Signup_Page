@@ -12,7 +12,7 @@ You can see the live preview 🖼️ of that page by clicking on below link. �
 
 ## Authors
 
-- [@pankajkumar90](https://www.github.com/pankajkumar90)
+- [@PankajBaliyan](https://www.github.com/PankajBaliyan)
 
 
 ## Contributing
@@ -28,7 +28,7 @@ Please adhere to this project's `code of conduct`.
 
 https://login-signup-page1.vercel.app
 <br><br>
-https://pankajkumar90.github.io/Login_Signup_Page/
+https://PankajBaliyan.github.io/Login_Signup_Page/
 
 
 ## Feedback
@@ -49,7 +49,7 @@ I learned many things while making this repository, i.e. how to make a login sig
 Clone the project
 
 ```bash
-  git clone https://github.com/Pankajkumar90/Login_Signup_Page.git
+  git clone https://github.com/PankajBaliyan/Login_Signup_Page.git
 ```
 
 Go to the project directory
