@@ -7,7 +7,7 @@
     .form-box {
         height: 90%;
         overflow: auto;
-        padding-top: 5rem;
+        /* padding-top: 5rem; */
     }
 
     .login-div,
