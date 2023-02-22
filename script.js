@@ -1,7 +1,4 @@
 // Define all variables
-const login_form = document.getElementById("login_form");
-const registration_form = document.getElementById("registration_form");
-const navbar = document.getElementById("navbar");
 const login_boy = document.getElementById("login_boy");
 const signup_boy = document.getElementById("signup_boy");
 const register_tick = document.getElementById("register_tick");
@@ -10,26 +7,40 @@ const registration_name = document.getElementById("registration_name");
 const registration_email = document.getElementById("registration_email");
 const registration_stream = document.getElementById("registration_stream");
 const registration_password = document.getElementById("registration_password");
-const snackbar_registration = document.getElementById("snackbar_registration");
+
+// Cache DOM elements
+const loginBtn = document.getElementById('loginBtn');
+const registerBtn = document.getElementById('registerBtn');
+const loginContainer = document.querySelector('.outer-login-div');
+const registerContainer = document.querySelector('.outer-registration');
+
+// Attach event listener using event delegation
+document.addEventListener('click', function(event) {
+  if (event.target === loginBtn) {
+    showLoginForm();
+  } else if (event.target === registerBtn) {
+    showSignupForm();
+  }
+});
 
 // SHOW LOGIN CONTAINER
-document.getElementById('loginBtn').addEventListener("click", login);
-function login() {
-  login_form.style.left = "90px";
-  registration_form.style.left = "650px";
-  navbar.style.left = "0px";
+function showLoginForm() {
+  registerBtn.classList.remove("navbar");
+  loginBtn.classList.add("navbar");
   login_boy.style.display = "block";
   signup_boy.style.display = "none";
+  loginContainer.style.display = "block";
+  registerContainer.style.display = "none";
 }
 
 // SHOW REGISTRATION CONTAINER
-document.getElementById('registerBtn').addEventListener("click", register);
-function register() {
-  login_form.style.left = "-300px";
-  registration_form.style.left = "10px";
-  navbar.style.left = "110px";
+function showSignupForm() {
+  loginBtn.classList.remove("navbar");
+  registerBtn.classList.add("navbar");
   login_boy.style.display = "none";
   signup_boy.style.display = "block";
+  loginContainer.style.display = "none";
+  registerContainer.style.display = "block";
 }
 
 // FUNCTION FOR SHOW PASSWORD IN TEXT FORMAT
@@ -104,7 +115,7 @@ function loginToast() {
 }
 
 //FUNCTION TO TICK/UN-TICK REGISTRATION TERMS & CONDITION CHECKBOX ACCORDING TO CERTAIN CONDITION
-document.getElementById("register_tick").addEventListener("click", enable_disable_registration_btn);
+register_tick.addEventListener("click", enable_disable_registration_btn);
 function enable_disable_registration_btn() {
   if (registration_checkbox() == 1) {
     if (register_tick.checked == true) {
@@ -157,12 +168,14 @@ function registration_toast() {
   showSuccessMessage(credentials);
 }
 function showSuccessMessage(credentials) {
-  snackbar_registration.className = "show";
-  setTimeout(function () {
-    snackbar_registration.className = snackbar_registration.className.replace("show", "");
-  }, 3000);
 
   swal("Your Credentials!", `${credentials}`, "success").then((value) => {
     window.location.reload();
   });
+
+  const snackbar = document.querySelector('#snackbar_registration');
+  snackbar.classList.add('show');
+  setTimeout(() => {
+    snackbar.classList.remove('show');
+  }, 3000);
 }
