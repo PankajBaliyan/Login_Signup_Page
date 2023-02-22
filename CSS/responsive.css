@@ -1,0 +1,51 @@
+/* mobile device  */
+@media (min-width: 320px) and (max-width: 480px) {
+    .boy_image {
+        display: none !important;
+    }
+
+    .form-box {
+        height: 90%;
+    }
+
+    .login-div,
+    .inner-registration {
+        justify-content: center;
+    }
+
+}
+
+/* tablet devices  */
+@media (min-width:481px) and (max-width:768px) {
+    .boy_image {
+        display: none !important;
+    }
+
+    .form-box {
+        height: 80%;
+    }
+
+    .login-div,
+    .inner-registration {
+        justify-content: center;
+    }
+}
+
+/* LAPTOP DEVICES  */
+@media (min-width:769px) and (max-width:1023px) {
+    /* Do nothing  */
+}
+
+/* DESKTOP DEVICES  */
+@media (min-width:1024px) and (max-width:1200px) {
+    /* Do nothing  */
+}
+
+@media (min-width:1114px) {
+    /* Do nothing  */
+}
+
+/* TV/EXTRA LARGE DEVICES  */
+@media (min-width:1201px) {
+    /* Do nothing  */
+}
