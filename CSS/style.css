@@ -14,6 +14,7 @@ body {
 }
 
 .form-box {
+    overflow: auto;
     width: 680px;
     background: #fff;
     padding: 5px;
